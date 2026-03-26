@@ -8,17 +8,40 @@
         {!! CookieConsent::styles() !!}
         @include('partials.head')
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
         @livewireStyles
     </head>
     <body>
-        <x-layouts::app.sidebar :title="$title ?? null">
+    @hasrole('admin')
+        <x-layouts::app.sidebar-admin :title="$title ?? null">
             <flux:main>
                 {{ $slot }}
                 <x-app.footer/>
             </flux:main>
-        </x-layouts::app.sidebar>
-        @livewireScripts
+        </x-layouts::app.sidebar-admin>
+    @livewireScripts
+    {!! CookieConsent::scripts() !!}
+    </body>
+</html>
+    @elsehasrole('contractor')
+    <x-layouts::app.sidebar-contractor :title="$title ?? null">
+        <flux:main>
+            {{ $slot }}
+            <x-app.footer/>
+        </flux:main>
+    </x-layouts::app.sidebar-contractor>
+    @livewireScripts
+    {!! CookieConsent::scripts() !!}
+    </body>
+</html>
+    @elsehasrole('user')
+    <x-layouts::app.sidebar :title="$title ?? null">
+        <flux:main>
+            {{ $slot }}
+            <x-app.footer/>
+        </flux:main>
+    </x-layouts::app.sidebar>
+    @livewireScripts
         {!! CookieConsent::scripts() !!}
     </body>
 </html>
+@endhasrole
