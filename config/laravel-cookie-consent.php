@@ -70,7 +70,7 @@ return [
      *
      * Determines the visual presentation of the consent modal.
      *
-     * @default 'bar-inline'
+     * @default 'cloud '
      * @env COOKIE_CONSENT_MODAL_LAYOUT
      * @option box - Small floating box
      * @option box-inline - Small floating box positioned inline
@@ -134,7 +134,7 @@ return [
      * @option light - Light mode theme
      * @option custom - Custom styles (requires additional CSS)
      */
-    'theme' => env('COOKIE_CONSENT_THEME', 'default'),
+    'theme' => env('COOKIE_CONSENT_THEME', 'dark'),
 
     /*
     |--------------------------------------------------------------------------
@@ -146,21 +146,21 @@ return [
     | soft-neutral - Minimal soft gray theme
     | dark         - Dark theme
     */
-    'theme_preset' => env('COOKIE_CONSENT_THEME_PRESET', 'basic'),
+    'theme_preset' => env('COOKIE_CONSENT_THEME_PRESET','minimal'),
 
     /**
      * Cookie banner title text
      *
      * @default "Cookie Disclaimer"
      */
-    'cookie_title' => "Cookie Disclaimer",
+    'cookie_title' => "Scoreachore.com uses cookies,heres our Disclaimer",
 
     /**
      * Cookie banner description text
      *
      * @default "This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies."
      */
-    'cookie_description' => "This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.",
+    'cookie_description' => "scoreachore uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.",
 
     /**
      * Accept all cookies button text

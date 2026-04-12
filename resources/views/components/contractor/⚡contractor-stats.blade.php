@@ -19,7 +19,7 @@ use Carbon\Carbon;
 ?>
 <div>
     {{-- The only way to do great work is to love what you do. - Steve Jobs --}}
-    <div class="p-10 text-4xl">
+    <div class="p-5 text-xl">
         <div class="text-center">New Team Members</div><br>
         <p class="text-center">{{$ContractorsCountNew}}</p>
         <br>

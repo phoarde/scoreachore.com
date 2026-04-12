@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Skill extends Model
 {
- public $fillable = ['skill'];
+ public $fillable = [
 
- public function skill():hasMany
+     'skill_name'
+ ];
+
+ public function service():hasMany
  {
-     return $this->hasMany('Service::class');
+     return $this->hasMany('Service::class')->id;
  }
 }

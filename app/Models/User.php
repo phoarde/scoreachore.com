@@ -67,6 +67,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('Invoice::class');
     }
+    public function contractors(): hasOne
+    {
+        return $this->hasOne('Contractors::class');
+    }
     public function isAdmin():\phpDocumentor\Reflection\Types\Boolean
     {
         return new \phpDocumentor\Reflection\Types\Boolean($this->role === 'admin');

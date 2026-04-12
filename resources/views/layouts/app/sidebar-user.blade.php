@@ -5,25 +5,7 @@
                 <x-app-logo :sidebar="true" href="{{ route('home') }}" wire:navigate />
                 <flux:sidebar.collapse class="lg:hidden" />
             </flux:sidebar.header>
-            {{--<flux:sidebar.nav>
-                <flux:sidebar.group :heading="__('Administrative Tasks')" class="grid">
-                        <flux:sidebar.item icon="home" :href="route('admin-home')" :current="request()->routeIs('admin-home')" wire:navigate>
-                            {{ __('Admin Home') }}
-                        </flux:sidebar.item>
-                        <flux:sidebar.item icon="user-group" :href="route('contractor-home')" :current="request()->routeIs('contractor-home')" wire:navigate>
-                            {{ __('Edit Team') }}
-                        </flux:sidebar.item>
-                        <flux:sidebar.item icon="user" :href="route('user-home')" :current="request()->routeIs('user-home')" wire:navigate>
-                            {{ __('Edit Users') }}
-                        </flux:sidebar.item>
-                        <flux:sidebar.item icon="wrench-screwdriver" :href="route('service-skills')" :current="request()->routeIs('skill-home')" wire:navigate>
-                            {{ __('Edit Skills and Services') }}
-                        </flux:sidebar.item>
-                        <flux:sidebar.item icon="currency-dollar" :href="route('service-home')" :current="request()->routeIs('service-home')" wire:navigate>
-                            {{ __('Service Orders and Invoices') }}
-                        </flux:sidebar.item>
-                </flux:sidebar.group>
-            </flux:sidebar.nav>--}}
+
              <flux:sidebar.nav>
                  <flux:sidebar.spacer />
                 <flux:sidebar.group :heading="__('User Menu')" class="grid">
@@ -31,23 +13,23 @@
                             {{ __('Schedule Services') }}
                         </flux:sidebar.item>
                 </flux:sidebar.group>
-                        <flux:sidebar.item icon="pencil-square" :href="route('review-home')" :current="request()->routeIs('review-home')" wire:navigate>
+                        <flux:sidebar.item icon="pencil-square" :href="route('reviews-home')" :current="request()->routeIs('reviews-home')" wire:navigate>
                             {{ __('Read and Write Reviews') }}
                         </flux:sidebar.item>
                         <flux:sidebar.item icon="briefcase" :href="route('join-us')" :current="request()->routeIs('join us')" wire:navigate>
                             {{ __('Join Us') }}
                         </flux:sidebar.item>
-                        <flux:sidebar.item icon="at-symbol" :href="route('about-us')" :current="request()->routeIs('about-us')" wire:navigate>
-                            {{ __('About Us') }}
-                        </flux:sidebar.item>
                         <flux:sidebar.item icon="bell" :href="route('notifications')" :current="request()->routeIs('notifications')" wire:navigate>
                             {{ __('Notifications') }}
                         </flux:sidebar.item>
+                 <flux:sidebar.item icon="at-symbol" :href="route('about-us')" :current="request()->routeIs('about-us')" wire:navigate>
+                     {{ __('About Us') }}
+                 </flux:sidebar.item>
                         <flux:sidebar.item icon="clipboard-document-list" :href="route('terms-and-conditions')" :current="request()->routeIs('terms-and-conditions')" wire:navigate>
                             {{ __('Terms and Conditions') }}
                         </flux:sidebar.item>
-                            <flux:sidebar.item icon="command-line" :href="route('developers')" :current="request()->routeIs('developers')" wire:navigate>
-                                {{ __('Developers') }}
+                            <flux:sidebar.item icon="command-line" :href="route('contact-us')" :current="request()->routeIs('contact-us')" wire:navigate>
+                                {{ __('Contact Us') }}
                             </flux:sidebar.item>
             </flux:sidebar.nav>
             <x-desktop-user-menu class="hidden lg:block" :name="auth()->user()->name" />

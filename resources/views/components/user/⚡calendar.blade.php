@@ -1,12 +1,14 @@
 <?php
 
 use Livewire\Component;
-
-new class extends Component {
+use App\Models\ServiceOrders
+new class extends Component
+{
+    public date $serviceDate='';
 
 };
 ?>
 
-<div>
-    calendar
+<div class="icon="date-picker-icon">
+   <flux:input  type="date" wire:model="serviceDate" />
 </div>

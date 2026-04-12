@@ -8,5 +8,19 @@ new class extends Component {
 ?>
 
 <div>
-    Notifications
+
+    <div>
+        your score a chore messages and unread notifications:
+        <ul>
+            @foreach ($notifications as $notification)
+                <li>{{ $notification->message }}</li>
+            @endforeach
+        </ul>
+    </div>
+
+    @if ($unreadCount > 0)
+        <p>You have {{ $unreadCount }} unread notifications.</p>
+    @endif
+    <flux:notifications />
+
 </div>

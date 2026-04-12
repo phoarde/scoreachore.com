@@ -2,12 +2,13 @@
     <div class="min-h-screen p-10 bg-white font-sserif-inter   dark:bg-zinc-800">
         <flux:sidebar sticky collapsible="mobile" class="border-e border-zinc-200 bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900">
             <flux:sidebar.header>
-                <x-app-logo :sidebar="true" href="{{ route('home') }}" wire:navigate />
+                <x-app-logo :sidebar="true" href="route('home') :current= " wire:navigate />
+                "
                 <flux:sidebar.collapse class="lg:hidden" />
             </flux:sidebar.header>
             <flux:sidebar.nav>
                 <flux:sidebar.group :heading="__('Team Tasks')" class="grid">
-                        <flux:sidebar.item icon="home" :href="route('Team-home')" :current="request()->routeIs('admin-home')" wire:navigate>
+                        <flux:sidebar.item icon="home" :href="route('Team-homr)" :current="request()->routeIs('team-home')" wire:navigate>
                             {{ __('Admin Home') }}
                         </flux:sidebar.item>
                         <flux:sidebar.item icon="user-group" :href="route('your-so')" :current="request()->routeIs('contractor-home')" wire:navigate>
@@ -31,7 +32,7 @@
                             {{ __('Schedule Services') }}
                         </flux:sidebar.item>
                 </flux:sidebar.group>
-                        <flux:sidebar.item icon="pencil-square" :href="route('review-home')" :current="request()->routeIs('review-home')" wire:navigate>
+                        <flux:sidebar.item icon="pencil-square" :href="route('review-Review')" :current="request()->routeIs('review-Review')" wire:navigate>
                             {{ __('Read and Write Reviews') }}
                         </flux:sidebar.item>
                         <flux:sidebar.item icon="briefcase" :href="route('join-us')" :current="request()->routeIs('join us')" wire:navigate>

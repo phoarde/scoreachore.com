@@ -6,7 +6,8 @@ use App\Models\Skill;
 use App\Models\Service;
 
 
-new class extends Component {
+new class extends Component
+{
 
     public $skills;
     public $Skill_id;
@@ -39,8 +40,7 @@ new class extends Component {
                 'service_description'=> $this->service_description,
                 'service_est_time'=>$this->service_est_time,
                 'service-rate'=>$this->service_rate,
-            ])
-        )) { dump($services);
+            ]))){ dd($services);
             Session()->flash('status', 'Success');
             return redirect()->to('skills');
         }
@@ -54,7 +54,8 @@ new class extends Component {
          <div class="bg-muted flex min-hfull flex-col max-h-full justify-left gap-6 p-6 md:p-10">--}}
     <div class="flex w-svreen max-w-xlg max-h-full flex-col   gap-6">
         <div class="rounded-xl border bg-white dark:bg-zinc-800 dark:border-stone-400 text-stone-400 max-h-full shadow-xs p-4">
-<h1 class="text-2xl font-bold text-center">Add or Edit Services</h1>
+<x-auth-session-status class="text-green-500" :status="session('status')" />
+            <h1 class="text-2xl font-bold text-center">Add or Edit Services</h1>
             <livewire:service.new-service-form />
         </div>
     </div>

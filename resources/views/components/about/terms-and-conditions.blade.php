@@ -1,5 +1,5 @@
 <div>
-    <x-mary-header class="grid grid-cols-1  text-accent w-1/2 ml-56"  title="our Terms and Conditions" subtitle="please take a few moments to read and understand our terms"></x-mary-header>
+    <x-mary-header class="grid grid-cols-1  text-accent text-sm sm:text-primary-content font-inter w-1/2 ml-56"  title="our Terms and Conditions" subtitle="please take a few moments to read and understand our terms"></x-mary-header>
     Terms and Conditions
     Welcome to Scoreachore!
 

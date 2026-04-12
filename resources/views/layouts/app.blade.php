@@ -3,10 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        @include('partials.head')
         <title>{{ $title ?? config('app.name') }}</title>
         {!! CookieConsent::styles() !!}
-        @include('partials.head')
         @vite(['resources/css/app.css', 'resources/js/app.js'])
         @livewireStyles
     </head>
@@ -14,8 +13,8 @@
     @hasrole('admin')
         <x-layouts::app.sidebar-admin :title="$title ?? null">
             <flux:main>
-                {{ $slot }}
-                <x-app.footer/>
+                    {{ $slot }}
+                <livrwire:about.footer/>
             </flux:main>
         </x-layouts::app.sidebar-admin>
     @livewireScripts
@@ -25,23 +24,24 @@
     @elsehasrole('contractor')
     <x-layouts::app.sidebar-contractor :title="$title ?? null">
         <flux:main>
-            {{ $slot }}
-            <x-app.footer/>
+                {{ $slot }}
+            <livewire:about.footer/>
         </flux:main>
     </x-layouts::app.sidebar-contractor>
-    @livewireScripts
+        @livewireScripts
     {!! CookieConsent::scripts() !!}
     </body>
 </html>
     @elsehasrole('user')
-    <x-layouts::app.sidebar :title="$title ?? null">
+    <x-layouts::app.sidebar-user :title="$title ?? null">
         <flux:main>
-            {{ $slot }}
-            <x-app.footer/>
+                {{ $slot }}
+            <livewire:about.footer/>
         </flux:main>
-    </x-layouts::app.sidebar>
-    @livewireScripts
+        </x-layouts::app.sisebar-user>
+        @livewireScripts
         {!! CookieConsent::scripts() !!}
-    </body>
+        </body>
 </html>
+        @else {{abort(403,'you are not authorised')}}
 @endhasrole

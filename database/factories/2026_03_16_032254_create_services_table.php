@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('skill_id')->constrained('skills')->onDelete('cascade');
             $table->string('service_name');
             $table->string('service_description');
+            $table->string('service_estimated_time');
             $table->float('service_rate');
             $table->timestamps();
         });

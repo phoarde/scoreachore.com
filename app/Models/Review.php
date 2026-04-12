@@ -10,18 +10,19 @@ class Review extends Model
     protected $fillable = [
         'user_id',
         'contractors_id',
+        'service_id',
+        'serviceDate',
         'title',
         'review',
         'stars',
-        'pictures',
     ];
 
-    public function user(): BelongsTo
+    public function user_id(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function contractors(): BelongsTo
+    public function contractors_id(): BelongsTo
     {
         return $this->belongsTo(Contractors::class);
     }

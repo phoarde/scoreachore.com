@@ -7,16 +7,15 @@
             </flux:sidebar.header>
             <flux:sidebar.nav>
                 <flux:sidebar.group :heading="__('Administrative Tasks')" class="grid">
-                        <flux:sidebar.item icon="home" :href="route('admin-home')" :current="request()->routeIs('admin-home')" wire:navigate>
-                            {{ __('Admin Home') }}
-                        </flux:sidebar.item>
-                        <flux:sidebar.item icon="user-group" :href="route('contractor-home')" :current="request()->routeIs('contractor-home')" wire:navigate>
+                    <flux:sidebar.item icon="user" :href="route('admin-home')" :current="request()->routeIs('admin-home')" wire:navigate>
+                        {{ __('Admin Home ') }}
+                        <flux:sidebar.item icon="user-group" :href="route('contractor-home')" :current="request()->routeIs('contractor-home' )" wire:navigate>
                             {{ __('Edit Team') }}
                         </flux:sidebar.item>
                         <flux:sidebar.item icon="user" :href="route('user-home')" :current="request()->routeIs('user-home')" wire:navigate>
                             {{ __('Edit Users') }}
                         </flux:sidebar.item>
-                        <flux:sidebar.item icon="wrench-screwdriver" :href="route('service-skills')" :current="request()->routeIs('skill-home')" wire:navigate>
+                        <flux:sidebar.item icon="wrench" :href="route('service-skills')" :current="request()->routeIs('skill-Review')" wire:navigate>
                             {{ __('Edit Skills and Services') }}
                         </flux:sidebar.item>
                         <flux:sidebar.item icon="currency-dollar" :href="route('service-home')" :current="request()->routeIs('service-home')" wire:navigate>
@@ -27,11 +26,11 @@
             {{-- <flux:sidebar.nav>
                  <flux:sidebar.spacer />
                 <flux:sidebar.group :heading="__('User Menu')" class="grid">
-                        <flux:sidebar.item icon="calendar" :href="route('schedule-home')" :current="request()->routeIs('schedule-home')" wire:navigate>
+                        <flux:sidebar.item icon="calendar" :href="route('schedule-Review')" :current="request()->routeIs('schedule-Review')" wire:navigate>
                             {{ __('Schedule Services') }}
                         </flux:sidebar.item>
                 </flux:sidebar.group>
-                        <flux:sidebar.item icon="pencil-square" :href="route('review-home')" :current="request()->routeIs('review-home')" wire:navigate>
+                        <flux:sidebar.item icon="pencil-square" :href="route('review-Review')" :current="request()->routeIs('review-Review')" wire:navigate>
                             {{ __('Read and Write Reviews') }}
                         </flux:sidebar.item>
                         <flux:sidebar.item icon="briefcase" :href="route('join-us')" :current="request()->routeIs('join us')" wire:navigate>

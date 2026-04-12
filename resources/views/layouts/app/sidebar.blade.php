@@ -31,7 +31,7 @@
                             {{ __('Schedule Services') }}
                         </flux:sidebar.item>
                 </flux:sidebar.group>
-                        <flux:sidebar.item icon="pencil-square" :href="route('review-home')" :current="request()->routeIs('review-home')" wire:navigate>
+                        <flux:sidebar.item icon="pencil-square" :href="route('review-home')" :current="request()->routeIs('review-Review')" wire:navigate>
                             {{ __('Read and Write Reviews') }}
                         </flux:sidebar.item>
                         <flux:sidebar.item icon="briefcase" :href="route('join-us')" :current="request()->routeIs('join us')" wire:navigate>

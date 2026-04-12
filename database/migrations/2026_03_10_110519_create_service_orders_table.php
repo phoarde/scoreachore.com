@@ -15,10 +15,19 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->foreignId('user_id')->constrained('users')->references('id')->on('users');
             $table->foreignId('service_id')->constrained('services')->references('id')->on('services');
-            $table->string('service-descripion')->nullable();
-            $table->foreignId('service_rate_id');
-
+            $table->foreignId('contractors_id')->constrained('contractors')->references('id')->on('contractors');
+            $table->date('date_of_service')->nullable();
+            $table->string('problemReport')->nullable();
+            $table->string('postMortem')->nullable();
+            $table->string('notes')->nullable();
+            $table->string('status')->default('pending');
+            $table->string('pictures')->nullable();
+            $table->integer('hoursWorked')->nullable();
+            $table->decimal('hourlyRate',10,2)->nullable();
+            $table->decimal('totalAmount',10,2)->nullable();
             $table->timestamps();
+            $table->softDeletes();
+
         });
 
     }

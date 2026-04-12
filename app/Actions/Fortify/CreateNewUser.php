@@ -10,6 +10,8 @@ use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers
 {
+
+
     use PasswordValidationRules, ProfileValidationRules;
 
     /**
@@ -23,7 +25,6 @@ class CreateNewUser implements CreatesNewUsers
             ...$this->profileRules(),
             'password' => $this->passwordRules(),
         ])->validate();
-
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
@@ -36,5 +37,7 @@ class CreateNewUser implements CreatesNewUsers
             'country' => $input['country'],
 
         ]);
+
+
     }
 }

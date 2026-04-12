@@ -7,7 +7,7 @@ use App\Models\Service;
 new class extends Component {
 
     public $skills;
-    public $sevices;
+    public $services;
     public NewServiceForm $serviceForm;
 
 
@@ -20,17 +20,17 @@ $this->skills=Skill::all();
 
 public function addSkill()
 {
-return $this->redirect('service-skills');
+return $this->redirect()->to('service-skills');
 }
 public function save()
 {
 
 $validated=$this->validate();
 if( Service::create($validated))
-Session()->flash('status', 'Success');
+Session()->flash('status', 'Success. a new service has been created and registered');
 
 else  $this->addError('serviceForm.save', 'failed to create to table');
-return redirect()->to('admin-home');
+return redirect()->to('service-skills');
 
 }
 };
@@ -38,13 +38,10 @@ return redirect()->to('admin-home');
 <div>
 
 <div class="p-2 text-center">select skill</div>
-    <form wire:submit="save" class="w-50 h-30 bg-zinc-750 border-3 border-gray-400 border-shadow-white rounded-md p-4">
-                    <flux:select class=" bg-gray-300 p-2" name="skill"  wire:model.live.blur="skill">
-                         <flux:select.option value="">
-                                                {{'select a skill'}}
-                         </flux:select.option>
+    <form wire:submit="save" class="w-150 h-130 bg-zinc-750 border-3 border-gray-400 border-shadow-white rounded-md p-4">
+                    <flux:select class=" bg-gray-300 p-2" name="skill_name"  wire:model.live.blur="skill_name">
                         @foreach ($this->skills as $skill)
-                            <flux:select.option class="w-0.5 h-200 p-2" value="{{ $skill->skill_id}}">{{ $skill->skill }}</flux:select.option>
+                            <flux:select.option class="w-0.5 h-200 p-2" value="{{ $skill->skill_id}}">{{ $skill->skill_name }}</flux:select.option>
                         @endforeach
                     </flux:select>
                     <div>@error('serviceForm.skill') {{ $message }} @enderror</div>
