@@ -112,5 +112,6 @@ public function uploadedImages()
         <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">Thank you for your review! Your feedback is valuable to us.</flux:callout>
         <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">
             {{--<livewire:reviews.review-list/>--}}
+        </flux:callout>
     </div>
 </div>
