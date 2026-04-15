@@ -91,13 +91,11 @@ new class extends Component {
 ?>
 
     <div class="flex h-full w-full flex-1 flex-col  rounded-xl">
-        <div class="grid  auto-rows-min gap-4 lg:grid-cols-2 ">
-            <div class="mt-9">
+        <div class="grid  auto-rows gap-4 lg:grid-cols-2 max-w-auto">
                 <div class="col-1 float-start aspect-video overflow-visible rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
                  <flux:callout icon="briefcase"   class="text-gray-300 text-center"><h1>Join our team</h1>
-                      <flux:text> Our team of skilled professionals is growing daily. Answer a few questions to join your local team and
-                    contribute to our mission of providing customers unmatched service and exceptional value. Cut out middle
-                                 management and BE YOUR OWN BOSS! Verify your eligibility and join our team.
+                      <flux:text> Our team of skilled professionals is growing daily. Answer a few questions to join your local team and contribute to our <flux:callout.link href="mission/>"mission of providing customers unmatched service and exceptional value. Cut out middle
+                                 management and BE YOUR OWN BOSS! Verify your eligibility now    and join our team.
                       </flux:text>
                  </flux:callout>
                 </div>
@@ -155,6 +153,6 @@ new class extends Component {
                 </div>
             </form>
         </flux:modal>
-    </div>
+
 
 

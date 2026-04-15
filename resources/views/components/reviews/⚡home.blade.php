@@ -10,17 +10,18 @@ use App\Models\Review;
 
 
 new class extends component {
-    public string $serviceDate;
-    public int $user_id;
+    public string $serviceDate='';
+    public int $user_id=0;
     public Collection $user;
-    public Collection $serviceOrders;
+    public  $serviceOrders;
     public Collection $services;
-    public int $service_id;
+    public int $service_id=0;
     public String $service_name;
     public int $contractors_id;
     public String $contractor;
     public string $title = '';
     public string $review = '';
+    public $showName=false;
   //
 
 
@@ -29,7 +30,7 @@ new class extends component {
     public function mount(): void
 
     {
-       // $this->serviceOrders=ServiceOrders::where('user_id', $this->user_id)->latest();
+        $this->serviceOrders=ServiceOrders::where('user_id', $this->user_id)->latest();
         $this->user_id = auth()->user()->id;
         $this->user=User::all()->where('id', $this->user_id);
         $this->services=Service::all();
@@ -38,14 +39,16 @@ new class extends component {
 
     }
 
+
 public function add()
 {
+
 //    dd($this->title, $this->review);
     if (App\Models\Review::create([
 
         'title' => $this->title,
         'review' => $this->review,
-        'service_name'=>$this->service_name,
+        'service_id'=>$this->service_id,
         'serviceDate' => $this->serviceDate,
     ])) {
         $this->reset();
@@ -88,10 +91,10 @@ public function uploadedImages()
                     <flux:button icon:trailing="chevron-down">Service</flux:button>
 
                     <flux:menu>
-                        <flux:menu.radio.group wire:model="service_name">
+                        <flux:menu.radio.group wire:model="service_id">
                             <flux:menu.radio checked></flux:menu.radio>
                             @foreach($services as $service)
-                            <flux:menu.radio  >{{$service->service_name}}</flux:menu.radio>
+                            <flux:menu.radio value="{{$service->id}}" >{{$service->service_name}}</flux:menu.radio>
                            @endforeach
                         </flux:menu.radio.group>
                     </flux:menu>
@@ -100,9 +103,14 @@ public function uploadedImages()
                         <flux:textarea label="Review" wire:model="review"/>
                         <flux:input.file type="file" multiple wire:model="" class="p-2" />
 
-                        <flux:checkbox clas="p-2" label="I would like to keep my name out of this review"/>
-                        <flux:button variant="primary" icon="megaphone" wire:click="add()">post review</flux:button>
+                                          <flux:checkbox class="p-10" label="I would like to keep my name out of this review" wire:model="showName"/>
+                             <flux:button variant="primary" icon="arrow-uturn-left" class="float-right" wire:click="add()">post review</flux:button>
+                            <flux:button variant="outline" icon="minus-circle" class="p-10"  wire:click="{{$this->reset()}}">reset form</flux:button>
+
             </form>
         </div>
+        <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">Thank you for your review! Your feedback is valuable to us.</flux:callout>
+        <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">
+            {{--<livewire:reviews.review-list/>--}}
     </div>
 </div>

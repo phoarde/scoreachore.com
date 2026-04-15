@@ -15,14 +15,14 @@ new class extends Component {
     public string $title;
     public string $review;
     public date $date;
-    public Collection $user;
-    public Collection $serviceOrder;
+    public  $user;
+    public  $serviceOrder;
 
 
     public function mount(): Void
     {
-        $this->user = auth()->user()->all;
-        $this->serviceOrder=ServiceOrders::
+        $this->user_id = auth()->user()->id;
+        $this->serviceOrder=ServiceOrders::whereUserId($this->user_id)->latest();
     }
     };
 ?>

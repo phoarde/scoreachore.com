@@ -21,7 +21,7 @@ return [
     | Set this value to 'true' to show the banner or 'false' to disable it.
     | You can control this via the .env file using APP_NAME.
     */
-    'cookie_prefix' => env('APP_NAME', 'Laravel_App'),
+    'cookie_prefix' => env('APP_NAME', 'every service app'),
 
     /**
      * Enable or disable the cookie consent banner
@@ -146,21 +146,21 @@ return [
     | soft-neutral - Minimal soft gray theme
     | dark         - Dark theme
     */
-    'theme_preset' => env('COOKIE_CONSENT_THEME_PRESET','minimal'),
+    'theme_preset' => env('COOKIE_CONSENT_THEME_PRESET','dark'),
 
     /**
      * Cookie banner title text
      *
      * @default "Cookie Disclaimer"
      */
-    'cookie_title' => "Scoreachore.com uses cookies,heres our Disclaimer",
+    'cookie_title' => "Scoreachore.com uses cookies,here is our Disclaimer",
 
     /**
      * Cookie banner description text
      *
      * @default "This website uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies."
      */
-    'cookie_description' => "scoreachore uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.",
+    'cookie_description' => "scoreachore.com uses cookies to enhance your browsing experience, analyze site traffic, and personalize content. By continuing to use this site, you consent to our use of cookies.",
 
     /**
      * Accept all cookies button text
@@ -195,7 +195,7 @@ return [
      *
      * @default 'Cookie Preferences'
      */
-    'cookie_modal_title' => 'Cookie Preferences',
+    'cookie_modal_title' => 'ScoreaChore.com Cookie Preferences',
 
     /**
      * Preferences modal introduction text
@@ -254,7 +254,7 @@ return [
     'policy_links' => [
         [
             'text' => 'Privacy Policy',
-            'link' => env('COOKIE_CONSENT_PRIVACY_POLICY_URL', '') ?? url('privacy-policy')
+            'link' => env('COOKIE_CONSENT_PRIVACY_POLICY_URL', '') ?? url('⚡privacy')
         ],
         [
             'text' => 'Terms and Conditions',

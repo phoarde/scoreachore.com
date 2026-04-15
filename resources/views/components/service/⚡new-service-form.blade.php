@@ -47,7 +47,7 @@ return redirect()->to('service-skills');
                     <div>@error('serviceForm.skill') {{ $message }} @enderror</div>
                     <flux:separator/>
                    <p class="p-2" >Enter a service that belongs to the selected skill</p>
-                    <flux:input  class="p-2" type="text" wire:model.live.blur="serviceForm.service_name"/>
+                    <   flux:input  class="p-2" type="text" wire:model.live.blur="serviceForm.service_name"/>
                         <div>@error('serviceForm.service_name') {{ $message }} @enderror</div>
                     Enter details or description of the service
                     <flux:input class="p-2" wire:model.live.blur="serviceForm.service_description" />
