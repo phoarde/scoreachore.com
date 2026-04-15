@@ -22,6 +22,7 @@ new class extends component {
     public string $title = '';
     public string $review = '';
     public $showName=false;
+    public int $stars=0;
   //
 
 
@@ -47,6 +48,7 @@ public function add()
     if (App\Models\Review::create([
 
         'title' => $this->title,
+        'stars'=> $this->stars,
         'review' => $this->review,
         'service_id'=>$this->service_id,
         'serviceDate' => $this->serviceDate,
@@ -87,7 +89,12 @@ public function uploadedImages()
 
             <form>
                         <flux:input type="date" label="Service Date" wire:model="serviceDate"/>
-                <flux:dropdown>
+                <flux:select class=" p-4 bg-gray-300 p-2" name="service_name" label="Select a service to review" wire:model.live.blur="service_id">
+                    @foreach ($this->services as $service)
+                        <flux:select.option class="w-0.5 h-200 p-4" value="{{ $service->id}}">{{ $service->service_name }}</flux:select.option>
+                    @endforeach
+                </flux:select>
+                {{--<flux:dropdown>
                     <flux:button icon:trailing="chevron-down">Service</flux:button>
 
                     <flux:menu>
@@ -98,8 +105,9 @@ public function uploadedImages()
                            @endforeach
                         </flux:menu.radio.group>
                     </flux:menu>
-                </flux:dropdown>
+                </flux:dropdown>--}}
                         <flux:input type="text" label="Title" wire:model="title"/>
+                <flux:input type="text" icon="star" label="stars" wire:model="stars"/>
                         <flux:textarea label="Review" wire:model="review"/>
                         <flux:input.file type="file" multiple wire:model="" class="p-2" />
 
