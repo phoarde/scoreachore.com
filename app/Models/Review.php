@@ -16,6 +16,7 @@ class Review extends Model
         'review',
         'stars',
         'service_name',
+        'showName',
     ];
 
     public function user_id(): BelongsTo
