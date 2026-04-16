@@ -93,7 +93,7 @@ public function uploadedImages()
                     @foreach ($this->services as $service)
                         <flux:select.option class="w-0.5 h-200 p-4" value="{{ $service->id}}">{{ $service->service_name }}</flux:select.option>
                     @endforeach
-                </flux:select>
+                </flux:select>  
                 {{--<flux:dropdown>
                     <flux:button icon:trailing="chevron-down">Service</flux:button>
 
