@@ -9,6 +9,7 @@ class Review extends Model
 {
     protected $fillable = [
         'user_id',
+        'service_orders_id',
         'contractors_id',
         'service_id',
         'serviceDate',
@@ -21,11 +22,19 @@ class Review extends Model
 
     public function user_id(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class)->id;
     }
 
     public function contractors_id(): BelongsTo
     {
-        return $this->belongsTo(Contractors::class);
+        return $this->belongsTo(Contractors::class)->id;
+    }
+    public function service_id(): BelongsTo
+    {
+        return $this->belongsTo(Service::class)->id;
+    }
+    public function service_orders_id(): BelongsTo
+    {
+        return $this->belongsTo(ServiceOrders::class)->id;
     }
 }
