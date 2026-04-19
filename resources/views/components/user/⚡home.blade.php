@@ -11,16 +11,16 @@ new class extends component
 ?>
 
 <div class="grid  auto-rows-min gap-4 md:grid-cols-3 position-relative aspect overflow-visible rounded-xl">
-    <div class="flex col-1 h-fit w-1/3 position-relative  border-gray-400 justify-self" >
+    <div class="flex col-1 h-fit w-auto position-relative  border-gray-400 justify-self" >
         <livewire:service.service-order/>
     </div>
-    <div class="flex grid col-2 h-fit w-aoto position-relative aspect-video border-2 overflow-visible border-amber-800">
         <flux:callout icon="wrench" >
                 <flux:callout.heading class="text-center">Welcome to Scorerachore.com</flux:callout.heading>
                         <flux.callout.text class="text-red-500 text-xl text-justify">Please bear with us we revitalize our user interface.</flux.callout.text>
-                            <flux:text class=" text-balance  text-gray-200 text-base" >Soon booking from Apple IOS and Android app will make scheduling and communicating immeasurably more intuitive, real time tracking and video as our team members complete the assigned service.  We well send you an email when its up and 100% functional. Changes happen daily SO it doesn't hurt Checks on our progress and leave     comment if there is more you would like to see. You can hover on service item to see a detailed information. If you have questions or concerns.
-                        </flux:text>
+                                <flux:text class=" text-balance  text-gray-200 text-base" >Soon booking from Apple IOS and Android app will make scheduling and communicating immeasurably more intuitive, real time tracking and video as our team members complete the assigned service.  We well send you an email when its up and 100% functional. Changes happen daily SO it doesn't hurt Checks on our progress and leave     comment if there is more you would like to see. You can hover on service item to see a detailed information. If you have questions or concerns.
+                            </flux:text>
 
+                        <flux:callout.text>
                                                 <a
                                                     class="sm:text-accent-blue" href="mailto:info@scoreachore.com"
                                                 please email info@scorerachore.com>

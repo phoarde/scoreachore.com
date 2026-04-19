@@ -18,6 +18,7 @@ class Review extends Model
         'stars',
         'service_name',
         'showName',
+        'problem report',
     ];
 
     public function user_id(): BelongsTo

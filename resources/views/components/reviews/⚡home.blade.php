@@ -22,6 +22,7 @@ new class extends component {
     public string $title = '';
     public string $review = '';
     public $showName=false;
+    public $problemReport;
     public int $stars=0;
   //
 
@@ -50,6 +51,7 @@ public function add()
         'title' => $this->title,
         'stars'=> $this->stars,
         'review' => $this->review,
+        'problem report'=>$this->problemReport,
         'service_id'=>$this->service_id,
         'serviceDate' => $this->serviceDate,
     ])) {
@@ -67,33 +69,24 @@ public function uploadedImages()
 
 }
 ?>
-<div class="flex h-full w-full flex-1 flex-col  rounded-xl">
-    <div class="grid  auto-rows-min gap-4 lg:grid-cols-2 ">
-        <div class="relative aspect-video overflow-visible rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
-            <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">
-                Please tell us about your experience with our service with a review, we added the ability of reviewers
-                to add pictures to their reviews.
+<div class="flex h-full w-full flex-1 flex-col  rounded-xlgrid  auto-rows-auto gap-4 lg:grid-cols-2 ">
 
-                Ask us a question or share your thoughts in a comments.
-            </flux:callout>
-            <flux:callout icon="information-circle" color="blue" class="mt-4 p-6 text-center">
-                To write a review, you must be registered user with a completed service order that you would like to review.<br>
-                <br>
-                But anyone can write a comment about just about anything.
-            </flux:callout>
-            <flux:callout icon="information-circle" color="blue" class="mt-4 p-6 text-center">
-                You can only write one review per service order.
-            </flux:callout>
-        </div>
         <div class="relative aspect-video overflow-visable rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
 
             <form>
                         <flux:input type="date" label="Service Date" wire:model="serviceDate"/>
+                <flux:separator></flux:separator>
                 <flux:select class=" p-4 bg-gray-300 p-2" name="service_name" label="Select a service to review" wire:model.live.blur="service_id">
+                    <flux:select class=" p-4 bg-gray-300 p-2" name="service_name" label="Select a service to review" wire:model.live.blur="service_id">
+                        @foreach ($this->serviceOrders as $serviceOrder)
+                            <flux:select.option class="w-0.5 h-200 p-4" value="{{ $serviceOrder->id}}">{{ $serviceOrder->$serviceOrder }}</flux:select.option>
+                        @endforeach
+                    </flux:select>
+                    <flux:separator></flux:separator>
                     @foreach ($this->services as $service)
                         <flux:select.option class="w-0.5 h-200 p-4" value="{{ $service->id}}">{{ $service->service_name }}</flux:select.option>
                     @endforeach
-                </flux:select>  
+                </flux:select>
                 {{--<flux:dropdown>
                     <flux:button icon:trailing="chevron-down">Service</flux:button>
 
@@ -116,6 +109,12 @@ public function uploadedImages()
                             <flux:button variant="outline" icon="minus-circle" class="p-10"  wire:click="{{$this->reset()}}">reset form</flux:button>
 
             </form>
+            <flux:callout icon="information-circle" color="blue" class="mt-4 p-6 text-center">
+                To write a review, you must be registered user with a completed service order that you would like to review.<br>
+                You can only write one review per service order.
+                <br>
+                But anyone can write a comment about just about anything.
+            </flux:callout>
         </div>
         <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">Thank you for your review! Your feedback is valuable to us.</flux:callout>
         <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">
