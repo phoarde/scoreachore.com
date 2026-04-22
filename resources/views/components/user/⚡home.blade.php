@@ -9,7 +9,7 @@ new class extends component
 // change
 }
 ?>
-<div class="grid  auto-rows-max gap-4 md:grid-cols-3 position-relative aspect overflow-visible rounded-xl">
+<div class="grid  auto-rows-max gap-4 md:grid-cols-2 position-relative aspect overflow-visible rounded-xl">
     <div class="flex col-1 h-fit w-fit position-relative  border-gray-400 justify-self" >
         <livewire:service.service-order/>
     </div>
