@@ -22,7 +22,9 @@ new class extends Component {
     public function mount(): Void
     {
         $this->user_id = auth()->user()->id;
-        $this->serviceOrder=ServiceOrders::whereUserId($this->user_id)->latest();
+        $this->serviceOrder=ServiceOrders::whereUserId($this->user_id);
+
+        if9
     }
     };
 ?>

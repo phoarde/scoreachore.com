@@ -2,38 +2,44 @@
 
 use Livewire\Component;
 
-new class extends Component {
+new class extends Component
+{
+    public $step=1;
+
+        public function CompleteSetviceOrderStep($step)
+        {
+            return $step++;
+        }
 
 };
 ?>
 
 <div>
-    <flux:card class="border-3 border-accent text-white p-4 rounded-lg">
-        <x-mary-timeline-item title="problem report" first/>
-
-            <x-mary-timeline-item title="create service order"/>
-
-            <x-mary-timeline-item title="solution proposal"/>
-
-            <x-mary-timeline-item title="service order created"/>
-
-            <x-mary-timeline-item title="service order sent"/>
-
-            <x-mary-timeline-item class="color-yellow-300" title="Schedule service"/>
-
-            <x-mary-timeline-item class="color-green-500 " title="customer approval S.O. date and time agreed"  />
-
-            <x-mary-timeline-item title="service order completed"/>
-
-            <x-mary-timeline-item title="Post mortem Review delivered"/>
-
-            <x-mary-timeline-item title="service order delevered"/>
-
-            <x-mary-timeline-item title="service order invoiced"/>
-
-            <x-mary-timeline-item title="invoice paid"/>
-
-            <x-mary-timeline-item title="customer review"/>
-
+    <flux:card >
+        <x-mary-steps wire:model="step" class="border-y border-base-content/10 my-5 py-5">
+        <x-mary-step step="1" text="problem report">
+            problemReport step
+        </x-mary-step>
+            <x-mary-step step="2" text="create Service Order">
+                createServiceOrder step
+            </x-mary-step>
+             <x-mary-step step="3" text="customer paid advance">
+                dueToday step
+            </x-mary-step>
+            <x-mary-step step="3" text="Team Member Assigned " class="bg-warning/20">
+                TeaMemberAssignTeam step
+            </x-mary-step>
+                <x-mary-step step="4" text="service performed">
+                    service performed step
+                </x-mary-step>
+                <x-mary-step step="5" text="post mortrem">
+                    PostMorteM step
+                    </x-mary-step>
+            <x-mary-step step="1" text="customer invoiced">
+                invoiceCustomer step
+            </x-mary-step>
+            <x-mary-step step="1" text="invoice paid" class="bg-success">
+                invoicePaid step
+            </x-mary-step>
     </flux:card>
 </div>

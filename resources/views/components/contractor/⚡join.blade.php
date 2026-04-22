@@ -4,7 +4,7 @@ use Illuminate\Support\Collection;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 use App\Models\User;
-use App\Models\skill;
+use App\Models\Skill;
 use App\Models\Contractors;
 use Illuminate\Database\Eloquent\Casts\Json;
 
