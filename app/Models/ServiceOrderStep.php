@@ -13,38 +13,42 @@ namespace App\Models;
 
         protected $fillable = [
         'user_id',
-        'problemReport_iid',
+        'problemReport_id',
         'contractors_id',
         'service_id',
-        'postMortrn_id',
+        'postMorton_id',
         'notes',
         'rate',
-        'hours_workeed',
+        'hours_worked',
         'total',
-        ];
+    s    ];
 
-        public function user(): BelongsTo
+        public function user_id(): BelongsTo
         {
-        return $this->belongsTo(User::class);
+                return $this->belongsTo(User::class);
         }
 
-        public function problemreportIid(): BelongsTo
+        public function problemReport_id(): BelongsTo
         {
-        return $this->belongsTo(provlemReport::class, 'problemReport_iid');
-        }
+        return $this->belongsTo(ServiceOrders::class, 'id');
+            }
 
-        public function contractors(): BelongsTo
+         public function contractors_id(): BelongsTo
         {
-        return $this->belongsTo(Contractors::class);
+             return $this->belongsTo(Contractors::class,'id');
         }
 
         public function service(): BelongsTo
         {
-        return $this->belongsTo(Service::class);
+             return $this->belongsTo(Service::class, 'id');
         }
 
-        public function postMortrn(): BelongsTo
+        public function postMortrn_id(): BelongsTo
         {
-        return $this->belongsTo(postnortem::class, 'postMortrn_id');
+            return $$this-$this->belongsTo(ServiceOrders::'id');
         }
+        public function servive_orders_id(): BelongsTo
+        {
+            return $this->belongsTo(ServiceOrders::('id');
+          }
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\hasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User;
 
@@ -26,6 +27,11 @@ class ServiceOrders extends Model
         'totalAmount',
     ];
 
+    public function id():hasMany
+    {
+        return $this->hasMany(ServiceOrders::class, 'id');
+    }
+
     public function user_id(): BelongsTo
     {
         return $this->belongsTo(User::class)->id;
@@ -39,5 +45,9 @@ class ServiceOrders extends Model
     public function service_id(): BelongsTo
     {
         return $this->belongsTo(Service::class)->id;
+    }
+    public function problemReport_id(): BelongsTo
+    {
+        return $this->belongsTo( ServiceOrders::class)->id;
     }
 }

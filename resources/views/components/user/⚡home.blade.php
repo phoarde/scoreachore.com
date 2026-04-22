@@ -6,7 +6,7 @@ use Livewire\Component;
 new class extends component
 {
 
-//
+// change
 }
 ?>
 <div class="grid  auto-rows-max gap-4 md:grid-cols-3 position-relative aspect overflow-visible rounded-xl">
