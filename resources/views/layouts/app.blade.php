@@ -12,7 +12,7 @@
     <body>
     @hasrole('admin')
         <x-layouts::app.sidebar-admin :title="$title ?? null">
-            <flux:main  >
+            <flux:main class="w-screen    " >
                     {{ $slot }}
                 <livrwire:about.footer/>
             </flux:main>

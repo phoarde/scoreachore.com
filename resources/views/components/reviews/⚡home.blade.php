@@ -10,12 +10,12 @@ use App\Models\Review;
 
 
 new class extends component {
-    public  $serviceOrders;
+    public   $serviceOrders;
     public string $serviceDate = '';
     public int $user_id = 0;
     public Collection $user;
     public int $service_orders_id;
-    public Collection $services;
+    public  $services;
     public int $service_id = 0;
     public String $service_name;
     public int $contractors_id;
@@ -27,23 +27,24 @@ new class extends component {
     public int $stars = 0;
     public int $serviceOrdersCount=0;
 
-    public function mount()
 
+    public function mount()
     {
         $this->user_id = auth()->user()->id;
         $this->user = User::all()->where('id', $this->user_id);
         $this->services = Service::all();
+
+        $this->serviceOrders=ServiceOrders::first();
+
+         if (($this->serviceOrdersCount <= 0) or ($this->serviceOrdersCount == null)) return redirect()->to('⚡comment');
         $this->serviceOrders = ServiceOrders::whereUserId($this->user_id);
-
         $this->serviceOrdersCount=$this->serviceOrders->count();
-              if (($this->serviceOrdersCount <= 0) or ($this->serviceOrdersCount == null)) return redirect()->to('reviews.comment');
+
+
 
     }
 
-    public function hasSO():bool
-    {
 
-    }
 
     public function add()
     {
@@ -74,7 +75,7 @@ new class extends component {
 
 }
 ?>
-<div class="flex h-full w-full flex-1 flex-col  rounded-xlgrid  auto-rows-auto gap-4 lg:grid-cols-2 ">
+<div class="flex flex-column flex-wrap columns-1 gap-4 ">
 
     <div
         class="relative aspect-video overflow-visable rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
@@ -99,18 +100,7 @@ new class extends component {
                                         value="{{ $service->id}}">{{ $service->service_name }}</flux:select.option>
                 @endforeach
             </flux:select>
-            {{--<flux:dropdown>
-                <flux:button icon:trailing="chevron-down">Service</flux:button>
 
-                <flux:menu>
-                    <flux:menu.radio.group wire:model="service_id">
-                        <flux:menu.radio checked></flux:menu.radio>
-                        @foreach($services as $service)
-                        <flux:menu.radio value="{{$service->id}}" >{{$service->service_name}}</flux:menu.radio>
-                       @endforeach
-                    </flux:menu.radio.group>
-                </flux:menu>
-            </flux:dropdown>--}}
             <flux:input type="text" label="Title" wire:model="title"/>
             <flux:input type="text" icon="star" label="stars" wire:model="stars"/>
             <flux:textarea label="Review" wire:model="review"/>

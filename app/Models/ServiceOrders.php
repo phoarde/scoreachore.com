@@ -48,6 +48,6 @@ class ServiceOrders extends Model
     }
     public function problemReport_id(): BelongsTo
     {
-        return $this->belongsTo( ServiceOrders::class)->id;
+        return  $this->belongsTo( ServiceOrders::class)->id;
     }
 }

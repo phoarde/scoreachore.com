@@ -1,30 +1,33 @@
 <?php
 
 use Livewire\Component;
+use App\Models\Comment;
+new class extends Component
 
-new class extends Component {
-    public string $title='';
-    public  $comments='';
-    public $name='';
-    public $email='';
-    public function mount():void
 {
-    $this->name= auth()->user()->name;
-    $this->email-auth()->user->email;
+    public string $title='';
+    public string $comments='';
+    public string $name='';
+    public string $email='';
+
+
+        public function mount():void
+        {
+            $this->name = auth()->user()->name;
+            $this->email = auth()->user()->email;
+        }
 
 }
-
-};ent
 ?>
 
-<div class="flwx flex-1 grid cols-02">
-    <di  class="bg-zinc-700 video-aspect overflow-scrollw:h">
-        <div class-"flex col-1" >
+<div class="flex flex-column columns-1">
+    <div  class="bg-zinc-700 video-aspect overflow-visible">
        <flux:card icon="clockarrow-down"wire:model.live="comment">
-           <insput type="text" name="tltle" placeholder="title of your commemt"/>
-           <input type="text-" namw="comment" placeholder="whats on yor mind"/>
-        </div>
+           <x-flux:text hey!{{$this->namq}} your email still {{$this->email}}/>
+           <insput type="text" name="title" placeholder="title of your comment"/>
+           <input type="text" namw="comment" placeholder="whats on yor mind"/>
+           dd($services);
+       </flux:card>
 
     </div>
-
 </div>

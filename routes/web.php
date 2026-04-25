@@ -13,6 +13,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::livewire('service-home', 'service.home')->name('service-home');
     Route::livewire('schedule-home', 'pages::schedule.home')->name('schedule-home');
     Route::livewire('add-skill', 'service.add-skill')->name('add-skill');
+    Route::livewire('⚡comment', 'reviews.   ⚡comment')->name('⚡comment');
     Route::livewire('reviews-home', 'reviews.home')->name('reviews-home');
     Route::livewire('about-us', 'about.about-us')->name('about-us');
     Route::livewire('terms-and-conditions', 'about.terms')->name('terms-and-conditions');

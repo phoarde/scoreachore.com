@@ -13,9 +13,9 @@ new class extends Component
     public $selectedDate;
     PUBLIC $selectedService;
     public $services;
-    public $service;
+    public $service_name;
 
-    public function nount()
+    public function mount()
     {
         $this->services=Service::all();
 
@@ -23,7 +23,7 @@ new class extends Component
 };
 ?>
 
-   <div class="text-3xl p-4 font-bold text-center mt-10">
+   <div class="flexflex column columns-1    text-3xl p-4 font-bold text-center mt-10">
        schedule service
 
     <fux:card class="relative text-center  flex columns-2 column-gap-sm-4 r">
@@ -35,12 +35,12 @@ new class extends Component
     </fux:card>
             <flux:callout class="position-absolute border-2 border-accent">
 
-
              <flux:input type="date" class="w-full p-2 border-b-mist-300 rounded-lg" wire:model="selectedDate"/>
-                <flux:select wire:model="selectedService" label=" select your desired service:"></flux:select>
-                @foreach (App\Models\Service::all() as $service)
-                    <flux:select.option  class="w-full p-2 rounded-lg" wire:model="selectedService" value="{{$service->service_id}}" >{{$service->service_name}}</flux:select.option>
-                @endforeach
+                <flux:select class=" bg-gray-300 p-2" name="service_name"  wire:model.live.blur="service_name">
+                    @foreach ($this->services as $service)
+                        <flux:select.option class="w-0.5 h-200 p-2" value="{{ $service->id}}">{{ $service->service_name }}</flux:select.option>
+                    @endforeach
+                </flux:select>
             </flux:callout>
         </div>
 
