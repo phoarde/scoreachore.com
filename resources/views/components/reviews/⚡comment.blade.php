@@ -21,7 +21,7 @@ new class extends Component
 ?>
 
 <div class="flex flex-column columns-1">
-    <div  class="bg-zinc-700 video-aspect overflow-visible">
+    <div  class="bg-zinc-700 video-aspect overflow-visible\">
        <flux:card icon="clockarrow-down"wire:model.live="comment">
            <x-flux:text hey!{{$this->namq}} your email still {{$this->email}}/>
            <insput type="text" name="title" placeholder="title of your comment"/>

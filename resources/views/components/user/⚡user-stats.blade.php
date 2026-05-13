@@ -27,12 +27,10 @@ new class extends Component
 ?>
 <div>
     {{-- The only way to do great work is to love what you do. - Steve Jobs --}}
-    <div class="p-5 text-xl">
-        <div class="text-center">New Users</div><br>
+    <flux:callout icon="user" class="flex flex-column p-5 text-sm">
+        <div class="text-center">New Users</div>
         <p class="text-center">{{$userCountNew}}</p>
-        <br>
-        <br>
         <h2 class="text-sm text-center"> total registered users<br>
             {{$userCountAll}}</h2>
-    </div>
+    </flux:callout>
 </div>

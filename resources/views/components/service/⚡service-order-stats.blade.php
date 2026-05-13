@@ -24,12 +24,10 @@ new class extends Component
 
 <div>
     {{-- The only way to do great work is to love what you do. - Steve Jobs --}}
-    <div class="p-5 text-xl">
-        <div class="text-center">New serviceOrders</div><br>
-        <p class="text-center">{{$serviceOrderCountNew}}</p>
-        <br>
-        <br>
-        <h2 class="text-sm text-center"> total registered service Orders<br>
-            {{$serviceOrderCountAll}}</h2>
+        <div class="flex flex-column p-5 text-xsm">
+            New serviceOrders</div>
+        <p claslogo.pngs="text-center">{{$serviceOrderCountNew}}</p>
+        <hp class="text-xsm text-center"> total registered service Orders<br>
+            {{$serviceOrderCountAll}}</hp>
     </div>
 </div>

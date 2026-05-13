@@ -6,7 +6,7 @@ new class extends Component
 {
     public $step=1;
 
-        public function CompleteSetviceOrderStep($step)
+        public function CompleteServiceOrderStep($step):int
         {
             return $step++;
         }
@@ -35,11 +35,12 @@ new class extends Component
             <x-mary-step step="5" text="post mortem">
                 PostMortem step
             </x-mary-step>
-                     </x-mary-step>
              <x-mary-step step="7" text="invoice paid" class="bg-success">
                 invoicePaid step
             </x-mary-step>
-            <x-mary-steps>
+            <x-button label="Previous" wire:click="prev" />
+            <x-button label="Next" wire:click="ComplereServiceOrderStep" />
+            <x-mary-steps>  <x></x>
 
     </flux:card>
 </div>
