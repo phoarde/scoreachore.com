@@ -11,7 +11,7 @@ use App\Models\Review;
 
 new `class extends component {
     public   $serviceOrders;
-    public string $serviceDate = '';
+    public string $serviceDate = now()->toDateString();
     public int $user_id = 0;
     public Collection $user;
     public int $service_orders_id;
@@ -76,10 +76,7 @@ new `class extends component {
 `?>
 <div class="flex flex-column flex-wrap columns-1 gap-4 ">
 
-    <div            <flux:separator></flux:separator>
-
-    class="relative aspect-video overflow-visable rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
-
+    <flux:separator></flux:separator></div><div class="relative aspect-video overflow-visable rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
         <form>
             <flux:input type="date" label="Service Date" wire:model="serviceDate"/>
 
@@ -113,6 +110,7 @@ new `class extends component {
             </flux:button>
 
         </form>
+</div>
         <flux:callout icon="information-circle" color="blue" class="mt-4 p-6 text-center">
             To write a review, you must be registered user with a completed service order that you would like to review.<br>
             You can only write one review per service order.
