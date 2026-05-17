@@ -9,9 +9,9 @@ use App\Models\ServiceOrders;
 use App\Models\Review;
 
 
-new `class extends component {
+new class extends component {
     public   $serviceOrders;
-    public string $serviceDate = now()->toDateString();
+    public string $serviceDate;
     public int $user_id = 0;
     public Collection $user;
     public int $service_orders_id;
@@ -68,12 +68,12 @@ new `class extends component {
         foreach ($images as $image)
             return $image;
 
-
+    }
 
 
 
 }
-`?>
+?>
 <div class="flex flex-column flex-wrap columns-1 gap-4 ">
 
     <flux:separator></flux:separator></div><div class="relative aspect-video overflow-visable rounded-xl border border-neutral-200 dark:border-neutral-700 p-4">
@@ -117,12 +117,11 @@ new `class extends component {
             <br>
             But anyone can write a comment about just about anything.
         </flux:callout>
-    </div>
+
     <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">Thank you for your review! Your feedback is valuable
         to us.
     </flux:callout>
     <flux:callout icon="megaphone" color="yellow" class="mt-4 p-6">
         {{--<livewire:reviews.review-list/>--}}
     </flux:callout>
-</div>
-</div>
+
